@@ -7,7 +7,9 @@ export default function MovieList(props) {
             {
                 props.data.map(element => {
                     return (
+                        <>
                         <Movie data={element} key={element.id}/>
+                        </>
                     )
                 })
             }

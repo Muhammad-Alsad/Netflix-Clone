@@ -8,13 +8,13 @@ export default function Home() {
 
     async function getMovies() {
         const url = process.env.REACT_APP_DERVER_URL
-        console.log(1111, url)
+       // console.log(1111, url)
         const response = await fetch(`${url}/trending`);
-        console.log(2222, response)
+        //console.log(2222, response)
         const jsonData = await response.json();
-        console.log(3333, jsonData);
+        //console.log(3333, jsonData);
         setMovies(jsonData)
-        console.log(4444, movies)
+        //console.log(4444, movies)
     }
 
     useEffect(() => {
