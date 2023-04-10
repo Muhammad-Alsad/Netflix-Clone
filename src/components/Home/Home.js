@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import MovieList from '../MovieList/MovieList';
 import NavBar from '../NavBar/NavBar';
+import FavList from '../FavList/FavList';
 
 
 export default function Home() {
@@ -22,8 +23,9 @@ export default function Home() {
     }, []);
     return (
         <>
-            <NavBar />
+           
             < MovieList data={movies} />
+           
         </>
     );
 }
