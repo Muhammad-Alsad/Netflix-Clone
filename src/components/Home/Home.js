@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MovieList from '../MovieList/MovieList';
-import NavBar from '../NavBar/NavBar';
-import FavList from '../FavList/FavList';
+
 
 
 export default function Home() {
@@ -18,14 +17,23 @@ export default function Home() {
         //console.log(4444, movies)
     }
 
+    function commentHandler(newData,id){
+        movies.map(movie=>{
+            if(movie.id === id){
+                 console.log("test",newData,id)
+                movie.comment = newData.userComment;
+                return movie
+            } else {
+                return movie
+            }
+        })
+    }
     useEffect(() => {
         getMovies()
     }, []);
     return (
         <>
-           
-            < MovieList data={movies} />
-           
+            < MovieList data={movies} commentHandler={commentHandler} /> 
         </>
     );
 }
