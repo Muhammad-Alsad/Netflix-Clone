@@ -19,7 +19,7 @@ export default function ModelMovie(props) {
 
     }
 
-    async function addToFavHandler(event, movie) {
+    async function addToFavHandler(event) {
         event.preventDefault();
 
         let url = `${process.env.REACT_APP_DERVER_URL}/addMovie`
@@ -38,9 +38,10 @@ export default function ModelMovie(props) {
             },
             body: JSON.stringify(data),
         })
-        if (response.status === 200) {
-            alert("sucessfully added to database")
+        if (response.status === 201) {
+            alert("sucessfully added to database !")
         }
+
        
     }
     return (
@@ -68,7 +69,7 @@ export default function ModelMovie(props) {
                         <Button variant="primary" type="submit" onClick={(event)=> submitHandler(event)}>
                             Submit
                         </Button>
-                        <Button className='btn-1' variant="primary"  onClick={(event) => addToFavHandler(event)}>
+                        <Button className='btn-1' variant="primary" type='submit' onClick={(event) => addToFavHandler(event)}>
                             Add-to-Favorites
                         </Button>
                     </Form>

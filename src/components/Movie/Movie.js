@@ -15,8 +15,8 @@ export default function Movie(props) {
 
     return (
         <>
-            {/* <CardGroup> */}
-                <Card className="card" style={{ width: '18rem' }}>
+            
+                <Card className="card" >
                     <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w400/${props.data.poster_path}`} />
                     <Card.Body>
                         <Card.Title>{props.data.title}</Card.Title>
@@ -24,7 +24,7 @@ export default function Movie(props) {
                     </Card.Body>
                 </Card>
                 <ModalMovie show={show} handleClose={handleClose} data={props.data} commentHandler={props.commentHandler} />
-            {/* </CardGroup> */}
+            
         </>
     )
 }
